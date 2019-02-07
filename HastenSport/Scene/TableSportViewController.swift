@@ -15,8 +15,13 @@ class TableSportViewController: UIViewController {
     let configurator = ConfiguratorTableSportVCImplementation()
     var numberOfCell:Int = 0
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        
         configurator.configure(view: self, presenter: presenter, useCase: useCase)
     }
 }

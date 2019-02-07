@@ -8,8 +8,18 @@
 
 import Foundation
 
-enum Transaction<T:Any> {
-    case success
-    case fail
+enum TransactionError: Error {
+    
+    case message(String)
+    case urlError
+    case serialization
+    case noInternet
+    case unknown
 }
 
+
+enum Transaction<T:Any> {
+    
+    case success(T)
+    case fail(TransactionError)
+}
