@@ -23,8 +23,6 @@ extension NetworkServiceImplementation: NetworkService {
         guard let urlBase = URL(string: path) else {
             return completion(Transaction.fail(.urlError))
         }
-//        var request = URLRequest(url:urlBase)
-//        request.httpMethod = "GET"
         URLSession.shared.dataTask(with: urlBase) { (data, response, error) in
             
             guard let restJson = data else {

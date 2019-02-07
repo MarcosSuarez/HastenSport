@@ -25,5 +25,21 @@ class PlayerTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setName(_ name:String) {
+        labelName.text = name
+    }
+    
+    func setSurname(_ surname:String) {
+        labelSurname.text = surname
+    }
+    
+    func setDate(_ date:String) {
+        labelBirthday.text = date
+    }
+    
+    func setPhoto(url: String) {
+        
+    }
 
 }

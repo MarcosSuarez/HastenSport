@@ -10,15 +10,18 @@ import Foundation
 
 protocol PresenterTableSportVC:class {
     func viewIsReady()
-    func getNumberOfRow() -> Int
-    func getCell(atIndex: Int)
+    func getNumberOfRow(atSection: Int) -> Int
     func getNumberOfSection() -> Int
+    func getName(indexPath: IndexPath) -> String
+    func getSurname(indexPath: IndexPath) -> String
+    func getDate(indexPath: IndexPath) -> String 
 }
 
 class PresenterTableSportImplementation: PresenterTableSportVC {
     
     private unowned let view:TableSportProtocol
     private let useCase:GetListSportUseCase
+    private var list = [ListSportEntity]()
     
     init(view: TableSportProtocol, useCase: GetListSportUseCase){
         self.view = view
@@ -29,26 +32,33 @@ class PresenterTableSportImplementation: PresenterTableSportVC {
         useCase.execute { (transactionResult) in
             switch transactionResult {
             case .success(let list):
-                print("lista de deportistas: \n",list)
-                
+                self.list = list
+//                print("lista de deportistas: \n",list)
+                self.view.reload()
             case .fail(let error):
                 print("Error: ", error)
+                
             }
         }
     }
     
+    func getName(indexPath: IndexPath) -> String {
+        return list[indexPath.section].players[indexPath.row].name
+    }
     
-    func getCell(atIndex: Int) {
-        
+    func getSurname(indexPath: IndexPath) -> String {
+        return list[indexPath.section].players[indexPath.row].surname
+    }
+    
+    func getDate(indexPath: IndexPath) -> String {
+        return list[indexPath.section].players[indexPath.row].date ?? ""
     }
     
     func getNumberOfSection() -> Int {
-        return 1
+        return list.count
     }
     
-    
-    func getNumberOfRow() -> Int {
-        return 1
+    func getNumberOfRow(atSection: Int) -> Int {
+        return list[atSection].players.count
     }
-    
 }

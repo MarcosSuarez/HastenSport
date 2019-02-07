@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TableSportProtocol: class {
-    
+    func reload()
 }
 
 class TableSportViewController: UIViewController {
@@ -29,18 +29,30 @@ class TableSportViewController: UIViewController {
 
 extension TableSportViewController: TableSportProtocol {
     
+    func reload() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension TableSportViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter?.getNumberOfSection() ?? 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.getNumberOfRow() ?? 0
+        return presenter?.getNumberOfRow(atSection: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellSport") as? PlayerTableViewCell
             else {return UITableViewCell()}
+        cell.labelName.text = presenter?.getName(indexPath: indexPath)
+        cell.labelSurname.text = presenter?.getSurname(indexPath: indexPath)
+        cell.labelBirthday.text = presenter?.getDate(indexPath: indexPath)
         
         return cell
     }
