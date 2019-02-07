@@ -24,8 +24,8 @@ struct ListSportEntity:Codable {
 struct PlayerEntity:Codable {
     var name:String
     var surname: String
-    var photo: String
-    var birthday: String?
+    var image: String
+    var date: String?
 }
 
 

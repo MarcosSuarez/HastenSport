@@ -9,13 +9,21 @@
 import Foundation
 
 protocol GetListSportUseCase {
-    func execute(completion: (Transaction<ListSportEntity>) -> ())
+    func execute(completion: @escaping(Transaction<[ListSportEntity]>) -> ())
 }
 
 class GetListSportUseCaseImplementacion: GetListSportUseCase {
     
-    func execute(completion: (Transaction<ListSportEntity>) -> ()) {
-        
+    func execute(completion: @escaping(Transaction<[ListSportEntity]>) -> ()) {
+        let service = NetworkServiceImplementation()
+        service.getList { (transactionList) in
+            switch transactionList {
+            case .success(let list):
+                completion(Transaction.success(list))
+            case .fail(let error):
+                completion(Transaction.fail(error))
+            }
+        }
     }
 
 }

@@ -9,15 +9,14 @@
 import Foundation
 
 protocol ConfiguratorTableSportVC {
-    func configure(view: TableSportViewController, presenter: PresenterTableSportVC, useCase: GetListSportUseCase)
+    func configure(view: TableSportViewController)
 }
 
 class ConfiguratorTableSportVCImplementation:ConfiguratorTableSportVC {
     
-    func configure(view: TableSportViewController, presenter: PresenterTableSportVC, useCase: GetListSportUseCase) {
+    func configure(view: TableSportViewController) {
         let useCase = GetListSportUseCaseImplementacion()
-        view.useCase = useCase
-        let presenter = PresenterTableSportImplementation()
+        let presenter = PresenterTableSportImplementation(view: view, useCase: useCase)
         view.presenter = presenter
     }
     

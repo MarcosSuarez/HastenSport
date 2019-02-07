@@ -8,33 +8,38 @@
 
 import UIKit
 
+protocol TableSportProtocol: class {
+    
+}
+
 class TableSportViewController: UIViewController {
 
-    var useCase: GetListSportUseCase!
-    var presenter: PresenterTableSportVC!
+    var presenter: PresenterTableSportVC?
     let configurator = ConfiguratorTableSportVCImplementation()
-    var numberOfCell:Int = 0
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
-        
-        configurator.configure(view: self, presenter: presenter, useCase: useCase)
+        configurator.configure(view: self)
+        presenter?.viewIsReady()
     }
+}
+
+extension TableSportViewController: TableSportProtocol {
+    
 }
 
 extension TableSportViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfCell
+        return presenter?.getNumberOfRow() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellSport")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellSport") as? PlayerTableViewCell
             else {return UITableViewCell()}
         
         return cell
