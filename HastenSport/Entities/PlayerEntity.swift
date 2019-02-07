@@ -15,9 +15,17 @@ enum TypeSport:String, Codable {
     case formula1 = "Formula 1"
 }
 
+struct ListSportEntity:Codable {
+    var players:[PlayerEntity]
+    var type:String
+    var title:TypeSport
+}
+
 struct PlayerEntity:Codable {
     var name:String
     var surname: String
-    var foto: String
-    var sport: TypeSport
+    var photo: String
+    var birthday: String?
 }
+
+

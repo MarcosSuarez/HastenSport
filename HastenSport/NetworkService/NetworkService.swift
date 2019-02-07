@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkService {
-    
+    func getList(onSuccess: (ListSportEntity)->Void, onFail: (Error)->() )
 }
 
 class NetworkServiceImplementation {
@@ -18,4 +18,7 @@ class NetworkServiceImplementation {
 
 extension NetworkServiceImplementation: NetworkService {
     
+    func getList(onSuccess: (ListSportEntity) -> Void, onFail: (Error) -> ()) {
+       
+    }
 }
