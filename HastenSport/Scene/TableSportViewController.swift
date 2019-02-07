@@ -46,6 +46,10 @@ extension TableSportViewController: UITableViewDataSource {
         return presenter?.getNumberOfRow(atSection: section) ?? 0
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter?.getHeader(section: section)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellSport") as? PlayerTableViewCell

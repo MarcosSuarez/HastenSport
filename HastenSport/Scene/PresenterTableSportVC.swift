@@ -12,6 +12,7 @@ protocol PresenterTableSportVC:class {
     func viewIsReady()
     func getNumberOfRow(atSection: Int) -> Int
     func getNumberOfSection() -> Int
+    func getHeader(section: Int) -> String
     func getName(indexPath: IndexPath) -> String
     func getSurname(indexPath: IndexPath) -> String
     func getDate(indexPath: IndexPath) -> String 
@@ -40,6 +41,10 @@ class PresenterTableSportImplementation: PresenterTableSportVC {
                 
             }
         }
+    }
+    
+    func getHeader(section: Int) -> String {
+        return list[section].title.rawValue
     }
     
     func getName(indexPath: IndexPath) -> String {
