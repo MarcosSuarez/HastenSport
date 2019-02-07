@@ -15,7 +15,8 @@ protocol PresenterTableSportVC:class {
     func getHeader(section: Int) -> String
     func getName(indexPath: IndexPath) -> String
     func getSurname(indexPath: IndexPath) -> String
-    func getDate(indexPath: IndexPath) -> String 
+    func getDate(indexPath: IndexPath) -> String
+    func getImagePath(indexPath: IndexPath) -> String
 }
 
 class PresenterTableSportImplementation: PresenterTableSportVC {
@@ -57,6 +58,10 @@ class PresenterTableSportImplementation: PresenterTableSportVC {
     
     func getDate(indexPath: IndexPath) -> String {
         return list[indexPath.section].players[indexPath.row].date ?? ""
+    }
+    
+    func getImagePath(indexPath: IndexPath) -> String {
+        return list[indexPath.section].players[indexPath.row].image
     }
     
     func getNumberOfSection() -> Int {

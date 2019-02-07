@@ -57,6 +57,8 @@ extension TableSportViewController: UITableViewDataSource {
         cell.labelName.text = presenter?.getName(indexPath: indexPath)
         cell.labelSurname.text = presenter?.getSurname(indexPath: indexPath)
         cell.labelBirthday.text = presenter?.getDate(indexPath: indexPath)
+        let path = presenter?.getImagePath(indexPath: indexPath) ?? ""
+        cell.setPhoto(path: path)
         
         return cell
     }

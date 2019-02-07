@@ -26,20 +26,19 @@ class PlayerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setName(_ name:String) {
-        labelName.text = name
-    }
-    
-    func setSurname(_ surname:String) {
-        labelSurname.text = surname
-    }
-    
-    func setDate(_ date:String) {
-        labelBirthday.text = date
-    }
-    
-    func setPhoto(url: String) {
+    func setPhoto(path: String) {
+        guard let url = URL(string: path) else { return }
         
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let data: Data = try Data(contentsOf: url)
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.photoView.image = image
+                }
+            } catch {
+                print("Error al cargar la imagen")
+            }
+        }
     }
-
 }
