@@ -18,6 +18,7 @@
 		8DCE28A0220C93450082BB44 /* ConfiguratorTableSportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE289F220C93450082BB44 /* ConfiguratorTableSportVC.swift */; };
 		8DCE28A3220C93970082BB44 /* GetListSportUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE28A2220C93970082BB44 /* GetListSportUseCase.swift */; };
 		8DCE28A6220C94240082BB44 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE28A5220C94240082BB44 /* Transaction.swift */; };
+		8DCE28A8220CA0720082BB44 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE28A7220CA0720082BB44 /* PlayerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8DCE289F220C93450082BB44 /* ConfiguratorTableSportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguratorTableSportVC.swift; sourceTree = "<group>"; };
 		8DCE28A2220C93970082BB44 /* GetListSportUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListSportUseCase.swift; sourceTree = "<group>"; };
 		8DCE28A5220C94240082BB44 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		8DCE28A7220CA0720082BB44 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8DCE2886220C8B1F0082BB44 /* TableSportViewController.swift */,
 				8DCE289D220C92DA0082BB44 /* PresenterTableSportVC.swift */,
 				8DCE289F220C93450082BB44 /* ConfiguratorTableSportVC.swift */,
+				8DCE28A7220CA0720082BB44 /* PlayerTableViewCell.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				8DCE28A3220C93970082BB44 /* GetListSportUseCase.swift in Sources */,
 				8DCE2898220C8BA20082BB44 /* PlayerEntity.swift in Sources */,
 				8DCE2887220C8B1F0082BB44 /* TableSportViewController.swift in Sources */,
+				8DCE28A8220CA0720082BB44 /* PlayerTableViewCell.swift in Sources */,
 				8DCE289B220C8CEF0082BB44 /* NetworkService.swift in Sources */,
 				8DCE2885220C8B1F0082BB44 /* AppDelegate.swift in Sources */,
 			);

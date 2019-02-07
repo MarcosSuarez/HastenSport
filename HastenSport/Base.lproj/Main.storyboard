@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Table Sport View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HastenSport" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TableSportViewController" customModule="HastenSport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="85.5" width="375" height="581.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSport" rowHeight="90" id="ca8-tt-w9R">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSport" rowHeight="90" id="ca8-tt-w9R" customClass="PlayerTableViewCell" customModule="HastenSport" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ca8-tt-w9R" id="iWK-tV-9xw">
@@ -37,19 +37,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu5-2t-7vK">
-                                                    <rect key="frame" x="120" y="5" width="45" height="21"/>
+                                                    <rect key="frame" x="120" y="5" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPM-1e-hKf">
-                                                    <rect key="frame" x="293" y="19" width="65" height="21"/>
+                                                    <rect key="frame" x="95" y="19" width="263" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8os-Gi-NfG">
-                                                    <rect key="frame" x="120" y="34" width="69" height="21"/>
+                                                    <rect key="frame" x="120" y="34" width="255" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,15 +57,24 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HPM-1e-hKf" firstAttribute="top" secondItem="iWK-tV-9xw" secondAttribute="top" constant="19" id="29H-EU-ma7"/>
+                                                <constraint firstItem="HPM-1e-hKf" firstAttribute="leading" secondItem="n5D-2Y-qEV" secondAttribute="trailing" id="LmZ-NV-DMu"/>
                                                 <constraint firstItem="8os-Gi-NfG" firstAttribute="leading" secondItem="n5D-2Y-qEV" secondAttribute="trailing" constant="25" id="PO2-U2-AZ0"/>
                                                 <constraint firstItem="bu5-2t-7vK" firstAttribute="leading" secondItem="n5D-2Y-qEV" secondAttribute="trailing" constant="25" id="WfW-Zr-0RF"/>
                                                 <constraint firstItem="bu5-2t-7vK" firstAttribute="top" secondItem="n5D-2Y-qEV" secondAttribute="top" id="caD-8p-dUO"/>
+                                                <constraint firstAttribute="trailing" secondItem="8os-Gi-NfG" secondAttribute="trailing" id="fbE-r4-WhH"/>
                                                 <constraint firstItem="n5D-2Y-qEV" firstAttribute="leading" secondItem="iWK-tV-9xw" secondAttribute="leading" constant="15" id="hCZ-Nh-1rv"/>
                                                 <constraint firstAttribute="trailing" secondItem="HPM-1e-hKf" secondAttribute="trailing" constant="17" id="mQb-7O-aNa"/>
+                                                <constraint firstAttribute="trailing" secondItem="bu5-2t-7vK" secondAttribute="trailing" id="re6-NI-Efb"/>
                                                 <constraint firstItem="n5D-2Y-qEV" firstAttribute="centerY" secondItem="iWK-tV-9xw" secondAttribute="centerY" id="tWi-0P-yni"/>
                                                 <constraint firstItem="8os-Gi-NfG" firstAttribute="top" secondItem="bu5-2t-7vK" secondAttribute="bottom" constant="8" id="u8w-R1-EHQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelBirthday" destination="HPM-1e-hKf" id="HZf-eh-csl"/>
+                                            <outlet property="labelName" destination="bu5-2t-7vK" id="YOY-A0-JRX"/>
+                                            <outlet property="labelSurname" destination="8os-Gi-NfG" id="455-Sa-K5t"/>
+                                            <outlet property="photoView" destination="n5D-2Y-qEV" id="LKw-NH-dzF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
