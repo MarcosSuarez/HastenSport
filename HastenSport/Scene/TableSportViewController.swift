@@ -10,6 +10,7 @@ import UIKit
 
 protocol TableSportProtocol: class {
     func reload()
+    func alert(message: String)
 }
 
 class TableSportViewController: UIViewController {
@@ -33,6 +34,15 @@ extension TableSportViewController: TableSportProtocol {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+    
+    func alert(message: String) {
+        let alertView = UIAlertController(title: "ERROR", message: message, preferredStyle: .alert)
+        let buttonOK = UIAlertAction(title: "OK", style: .default) { (alertAction) in
+            self.dismiss(animated: true)
+        }
+        alertView.addAction(buttonOK)
+        present(alertView, animated: true)
     }
 }
 

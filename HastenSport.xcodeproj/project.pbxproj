@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D04A143F59022B196AC3E1D /* Pods_HastenSport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5E28FBD9FB0401AC8FDB1D /* Pods_HastenSport.framework */; };
 		8DCE2885220C8B1F0082BB44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE2884220C8B1F0082BB44 /* AppDelegate.swift */; };
 		8DCE2887220C8B1F0082BB44 /* TableSportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE2886220C8B1F0082BB44 /* TableSportViewController.swift */; };
 		8DCE288A220C8B1F0082BB44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE2888220C8B1F0082BB44 /* Main.storyboard */; };
@@ -36,6 +37,9 @@
 		8DCE28A2220C93970082BB44 /* GetListSportUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListSportUseCase.swift; sourceTree = "<group>"; };
 		8DCE28A5220C94240082BB44 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		8DCE28A7220CA0720082BB44 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		AC262A7EA01ACC03FE321163 /* Pods-HastenSport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HastenSport.release.xcconfig"; path = "Pods/Target Support Files/Pods-HastenSport/Pods-HastenSport.release.xcconfig"; sourceTree = "<group>"; };
+		AE5E28FBD9FB0401AC8FDB1D /* Pods_HastenSport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HastenSport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2ACC917E97A75B4B6E521B2 /* Pods-HastenSport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HastenSport.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HastenSport/Pods-HastenSport.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D04A143F59022B196AC3E1D /* Pods_HastenSport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,8 @@
 			children = (
 				8DCE2883220C8B1F0082BB44 /* HastenSport */,
 				8DCE2882220C8B1F0082BB44 /* Products */,
+				C5286792AE2C6CC42682CC0D /* Pods */,
+				A21BFEC06B25705740332C7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +124,23 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		A21BFEC06B25705740332C7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE5E28FBD9FB0401AC8FDB1D /* Pods_HastenSport.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5286792AE2C6CC42682CC0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2ACC917E97A75B4B6E521B2 /* Pods-HastenSport.debug.xcconfig */,
+				AC262A7EA01ACC03FE321163 /* Pods-HastenSport.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DCE2893220C8B200082BB44 /* Build configuration list for PBXNativeTarget "HastenSport" */;
 			buildPhases = (
+				FBC964551364F669029511C4 /* [CP] Check Pods Manifest.lock */,
 				8DCE287D220C8B1F0082BB44 /* Sources */,
 				8DCE287E220C8B1F0082BB44 /* Frameworks */,
 				8DCE287F220C8B1F0082BB44 /* Resources */,
+				3A62CFD2A0FD3AEC03ABE610 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +208,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A62CFD2A0FD3AEC03ABE610 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HastenSport/Pods-HastenSport-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HastenSport/Pods-HastenSport-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBC964551364F669029511C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HastenSport-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DCE287D220C8B1F0082BB44 /* Sources */ = {
@@ -273,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -328,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,6 +405,7 @@
 		};
 		8DCE2894220C8B200082BB44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2ACC917E97A75B4B6E521B2 /* Pods-HastenSport.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,6 +424,7 @@
 		};
 		8DCE2895220C8B200082BB44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC262A7EA01ACC03FE321163 /* Pods-HastenSport.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

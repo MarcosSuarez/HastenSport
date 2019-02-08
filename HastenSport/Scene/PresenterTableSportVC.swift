@@ -39,7 +39,7 @@ class PresenterTableSportImplementation: PresenterTableSportVC {
                 self.view.reload()
             case .fail(let error):
                 print("Error: ", error)
-                
+                self.view.alert(message: error.localizedDescription)
             }
         }
     }

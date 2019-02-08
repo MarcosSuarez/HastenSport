@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PlayerTableViewCell: UITableViewCell {
 
@@ -28,17 +29,8 @@ class PlayerTableViewCell: UITableViewCell {
     
     func setPhoto(path: String) {
         guard let url = URL(string: path) else { return }
-        
-        DispatchQueue.global(qos: .background).async {
-            do {
-                let data: Data = try Data(contentsOf: url)
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.photoView.image = image
-                }
-            } catch {
-                print("Error al cargar la imagen")
-            }
+        DispatchQueue.main.async {
+            self.photoView.sd_setImage(with: url)
         }
     }
 }
